@@ -1,0 +1,12 @@
+
+const SET_STATE_DEFAULT: string = 'SET_STATE_DEFAULT';
+type SET_STATE_DEFAULT_TYPE = typeof SET_STATE_DEFAULT;
+
+
+export {
+    SET_STATE_DEFAULT
+}
+
+export type {
+    SET_STATE_DEFAULT_TYPE
+}
