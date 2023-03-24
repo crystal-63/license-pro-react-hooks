@@ -18,6 +18,7 @@ const Header: FC<IProps> = ({
     const dispatch: Dispatch = useDispatch();
 
     const setStateDefault: () => void = () =>{
+        //如果点击返回按钮 将state 重置到默认状态
         dispatch({ type: types.SET_STATE_DEFAULT })
     }
 

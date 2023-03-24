@@ -7,7 +7,8 @@ enum HEADER_TITLE {
 }
 
 const Test: FC = () => {
-
+    // 在考题加载的时候，显示试题加载中
+    // 在试题加载完毕的时候，显示考试中
     const [ headerTitle, setHeaderTitle ] = useState<string>(HEADER_TITLE.loading);
     
     return (

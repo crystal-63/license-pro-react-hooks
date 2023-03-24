@@ -1,8 +1,9 @@
+// 科目类型
 enum SUBJECTS {
     s1 = 1,
     s2 = 4
 }
-
+// 驾照类型
 enum MODELS {
     c1 = 'c1',
     c2 = 'c2',
@@ -11,7 +12,7 @@ enum MODELS {
     b1 = 'b1',
     b2 = 'b2',
 }
-
+// store state接口
 interface IState {
     //queryList: [] 返回回来的100条数据
     queryList: IQueryData[];
@@ -26,7 +27,7 @@ interface IState {
     //total 考试一共多少题
     total: number;
 }
-
+// 用户作答项信息
 interface IUserAnswer {
     qid: string,
     question: string,
@@ -36,7 +37,7 @@ interface IUserAnswer {
     rightAnswer: string,
     isRight: boolean
 }
-
+// 用户题目信息
 interface IQueryData {
     id: string;
     question: string;//问题
@@ -47,6 +48,16 @@ interface IQueryData {
     item4: string;
     explains: string;//答案解释
     url?: string;//图片url
+}
+// 科目数据类型定义
+interface ISubjectData {
+    id: SUBJECTS;
+    title: string
+}
+// 驾照数据类型定义
+interface IModelData {
+    id: MODELS;
+    title: string
 }
 
 export {
@@ -64,5 +75,7 @@ export type{
     IHttpPostData,
     IUserAnswer,
     IQueryData,
-    IState
+    IState,
+    ISubjectData,
+    IModelData
 }

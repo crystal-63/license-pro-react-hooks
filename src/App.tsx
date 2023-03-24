@@ -9,12 +9,12 @@ import Result from './views/Result';
 function App() {
   return (
     <div className="App">
-      <Route path="/" component={ Home }/>
-      <Route path="/test" component={ Test }/>
-      <Route path="/result" component={ Result }/>
-      {/* <Switch>
-        
-      </Switch> */}
+      
+      <Switch>
+        <Route path="/" component={ Home }/>
+        <Route path="/test" component={ Test }/>
+        <Route path="/result" component={ Result }/>
+      </Switch>
     </div>
   );
 }
