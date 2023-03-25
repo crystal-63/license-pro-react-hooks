@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       
       <Switch>
-        <Route path="/" component={ Home }/>
-        <Route path="/test" component={ Test }/>
-        <Route path="/result" component={ Result }/>
+        <Route path="/" exact={true} component={ Home }/>
+        <Route path="/test" exact={true} component={ Test }/>
+        <Route path="/result" exact={true} component={ Result }/>
       </Switch>
     </div>
   );
