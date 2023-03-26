@@ -47,7 +47,7 @@ interface IQueryData {
     item3: string;
     item4: string;
     explains: string;//答案解释
-    url?: string;//图片url
+    url: string;//图片url
 }
 // 科目数据类型定义
 interface ISubjectData {

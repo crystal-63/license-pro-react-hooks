@@ -1,7 +1,7 @@
 import axios from '../lib/http';
 import { IHttpPostData } from '../typings';
 
-function getQuerues<T>(options:IHttpPostData): Promise<T> {
+function getQueries<T>(options:IHttpPostData): Promise<T> {
     const { subject, model } = options;
     return axios.post<T, T>('/api/query',{
         subject, model
@@ -13,5 +13,5 @@ function getQuerues<T>(options:IHttpPostData): Promise<T> {
 }
 
 export {
-    getQuerues
+    getQueries
 }

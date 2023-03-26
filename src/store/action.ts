@@ -1,4 +1,4 @@
-import { MODELS, SUBJECTS } from '../typings';
+import { IQueryData, MODELS, SUBJECTS } from '../typings';
 import * as types from './actionTypes'
 
 
@@ -18,9 +18,14 @@ interface ISetCurrentModel {
     payload: MODELS
 }
 
+interface ISetQueryList {
+    type: types.SET_QUERY_LIST_TYPE,
+    payload: IQueryData[]
+}
+
 // 定义redux action 参数的类型
 // 由于类型是多个，所以要用 | 联合类型
-export type TAction = ISetStateDefault | ISetCurrentSubject | ISetCurrentModel;
+export type TAction = ISetStateDefault | ISetCurrentSubject | ISetCurrentModel | ISetQueryList;
 
 
 // action方法
@@ -45,8 +50,16 @@ function setCurrentModel (model: MODELS): ISetCurrentModel {
     }
 }
 
+function setQueryList (queryList: IQueryData[]) {
+    return {
+        type: types.SET_QUERY_LIST,
+        payload: queryList
+    }
+}
+
 export {
     setStateDefault,
     setCurrentSubject,
-    setCurrentModel
+    setCurrentModel,
+    setQueryList
 }
