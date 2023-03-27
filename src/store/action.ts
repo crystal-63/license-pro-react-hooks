@@ -1,4 +1,4 @@
-import { IQueryData, MODELS, SUBJECTS } from '../typings';
+import { IQueryData, IUserAnswer, MODELS, SUBJECTS } from '../typings';
 import * as types from './actionTypes'
 
 
@@ -23,9 +23,14 @@ interface ISetQueryList {
     payload: IQueryData[]
 }
 
+interface ISetUserAnswer {
+    type: types.SET_USER_ANSWER_TYPE,
+    payload: IUserAnswer
+}
+
 // 定义redux action 参数的类型
 // 由于类型是多个，所以要用 | 联合类型
-export type TAction = ISetStateDefault | ISetCurrentSubject | ISetCurrentModel | ISetQueryList;
+export type TAction = ISetStateDefault | ISetCurrentSubject | ISetCurrentModel | ISetQueryList | ISetUserAnswer;
 
 
 // action方法
@@ -57,9 +62,17 @@ function setQueryList (queryList: IQueryData[]) {
     }
 }
 
+function setUserAnswer ( userAnswer: IUserAnswer ): ISetUserAnswer {
+ return {
+    type: types.SET_QUERY_LIST,
+    payload: userAnswer
+ }
+}
+
 export {
     setStateDefault,
     setCurrentSubject,
     setCurrentModel,
-    setQueryList
+    setQueryList,
+    setUserAnswer
 }

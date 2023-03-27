@@ -32,7 +32,7 @@ interface IUserAnswer {
     qid: string,
     question: string,
     url: string,
-    explain: string,
+    explains: string,
     userAnswer: string,
     rightAnswer: string,
     isRight: boolean

@@ -1,5 +1,5 @@
 import * as types from './actionTypes'
-import { IQueryData, IState, MODELS, SUBJECTS } from '../typings';
+import { IQueryData, IState, IUserAnswer, MODELS, SUBJECTS } from '../typings';
 import { TAction } from './action';
 import initialState from './state';
 
@@ -35,6 +35,12 @@ function reducer(state: IState = initialState, action: TAction): IState {
             return {
                 ...state, 
                 queryList: action.payload as IQueryData[],
+            }as IState;
+        case types.SET_USER_ANSWER:
+            const userAnswer: IUserAnswer[] = [...state.userAnswers, action.payload as IUserAnswer]
+            return {
+                ...state, 
+                userAnswer
             }as IState;
         default:
             return state as IState;;
