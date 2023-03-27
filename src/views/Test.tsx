@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Header from "../components/Header";
 import TestPanel from "../components/TestPanel";
 import { useCurQuestion } from "../hooks";
-import { IQueryData, IState } from "../typings";
+import { IQueryData, IState, IUserAnswer } from "../typings";
 import * as H from 'history';
 
 enum HEADER_TITLE {
@@ -39,7 +39,7 @@ const Test: FC<IProps> = ({
     const total: number = useSelector((state: IState) => state.total);
     const queryList: IQueryData[] = useSelector((state: IState) => state.queryList);
     const [ curQuestion, setCurQuestion] = useCurQuestion();
-    //const userAnswers: IUserAnswer[] = useSelector((state: IState) => state.userAnswers);
+    const userAnswers: IUserAnswer[] = useSelector((state: IState) => state.userAnswers);
 
     //当当前的题目存在  设置title为考试中...
     useEffect(() => {
@@ -61,6 +61,11 @@ const Test: FC<IProps> = ({
             history.push('/result');
         }
     },[curIdx, total, history])
+
+    useEffect(() => {
+        console.log(userAnswers)
+
+    },[userAnswers])
 
     return (
         <div className="container">

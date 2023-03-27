@@ -37,10 +37,10 @@ function reducer(state: IState = initialState, action: TAction): IState {
                 queryList: action.payload as IQueryData[],
             }as IState;
         case types.SET_USER_ANSWER:
-            const userAnswer: IUserAnswer[] = [...state.userAnswers, action.payload as IUserAnswer]
+            const userAnswers: IUserAnswer[] = [...state.userAnswers, action.payload as IUserAnswer]
             return {
                 ...state, 
-                userAnswer
+                userAnswers
             }as IState;
         default:
             return state as IState;;
